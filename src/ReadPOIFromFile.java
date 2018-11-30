@@ -21,7 +21,7 @@ public class ReadPOIFromFile {
     HashMap<String, double[]> processCSVFile() throws IOException {
         Path path = Paths.get(System.getProperty("user.dir"));
         List<Path> paths;
-        try (Stream<Path> files = Files.list(path.getParent())) {
+        try (Stream<Path> files = Files.list(path)) {
             paths = files.filter(f -> f.endsWith("assets.csv")).collect(Collectors.toList());
         }
         try (Stream<String> lines = Files.lines(paths.get(0))) {

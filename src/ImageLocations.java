@@ -18,7 +18,7 @@ class ImageLocations {
     HashMap<String, double[]> getCoordinates() {
         Path path = Paths.get(System.getProperty("user.dir"));
         List<Path> paths = new ArrayList<>();
-        try (Stream<Path> files = Files.list(Paths.get(path.getParent()+"/images"))) {
+        try (Stream<Path> files = Files.list(Paths.get(path+"/images"))) {
             files.forEachOrdered(f -> paths.add((f)));
         } catch (IOException e) {
             e.printStackTrace();

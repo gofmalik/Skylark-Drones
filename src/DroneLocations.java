@@ -19,7 +19,7 @@ class DroneLocations {
         Path path = Paths.get(System.getProperty("user.dir"));
         List<Path> paths;
         // retrieving files in the videos folder
-        try (Stream<Path> files = Files.list(Paths.get(path.getParent()+"/videos"))) {
+        try (Stream<Path> files = Files.list(Paths.get(path+"/videos"))) {
             paths = files.filter(f -> f.toString().endsWith(".SRT")).collect(Collectors.toList());
         }
         for (Path p : paths) {
